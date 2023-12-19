@@ -1,0 +1,243 @@
+{
+  "member": [
+    {
+      "id": 1,
+      "username": "hank",
+      "password": "456",
+      "phone": "0921876359",
+      "address": "hank123"
+    },
+    {
+      "id": 2,
+      "username": "wayne",
+      "password": "456",
+      "phone": "0912345679",
+      "address": "wayne123"
+    }
+  ],
+  "sevenDatil": [],
+  "wishList": [],
+  "orders": [],
+  "products": [
+    {
+      "product": "https://www.kobayashi.com.tw/product_view.php?type=1&id=146",
+      "img": "https://www.kobayashi.com.tw/upload/frame_product/611b186c98d8c.jpg",
+      "plus__img": "https://img.icons8.com/ios/50/000000/plus-math.png",
+      "more": "更多介紹",
+      "id": "D213211",
+      "title": "伊藤 ITOH",
+      "model": "伊藤工匠-D213211",
+      "cost": 3480,
+      "code": 3480
+    },
+    {
+      "product": "https://www.kobayashi.com.tw/product_view.php?type=1&id=147",
+      "img": "https://www.kobayashi.com.tw/upload/frame_product/611b5130a4569.jpg",
+      "plus__img": "https://img.icons8.com/ios/50/000000/plus-math.png",
+      "more": "更多介紹",
+      "id": "D213212",
+      "title": "伊藤 ITOH",
+      "model": "伊藤工匠-D213212",
+      "cost": 3480,
+      "code": 3480
+    },
+    {
+      "product": "https://www.kobayashi.com.tw/product_view.php?type=1&id=148",
+      "img": "https://www.kobayashi.com.tw/upload/frame_product/611b232011d71.jpg",
+      "plus__img": "https://img.icons8.com/ios/50/000000/plus-math.png",
+      "more": "更多介紹",
+      "id": "D213213",
+      "title": "伊藤 ITOH",
+      "model": "伊藤工匠-D213213",
+      "cost": 3480,
+      "code": 3480
+    },
+    {
+      "product": "https://www.kobayashi.com.tw/product_view.php?type=1&id=149",
+      "img": "https://www.kobayashi.com.tw/upload/frame_product/611b24c94511a.jpg",
+      "plus__img": "https://img.icons8.com/ios/50/000000/plus-math.png",
+      "more": "更多介紹",
+      "id": "D213214",
+      "title": "伊藤 ITOH",
+      "model": "伊藤工匠-D213214",
+      "cost": 3480,
+      "code": 3480
+    },
+    {
+      "product": "https://www.kobayashi.com.tw/product_view.php?type=1&id=150",
+      "img": "https://www.kobayashi.com.tw/upload/frame_product/611b4c3398149.jpg",
+      "plus__img": "https://img.icons8.com/ios/50/000000/plus-math.png",
+      "more": "更多介紹",
+      "id": "D213201",
+      "title": "伊藤 ITOH",
+      "model": "伊藤工匠-D213201",
+      "cost": 2480,
+      "code": 2480
+    },
+    {
+      "product": "https://www.kobayashi.com.tw/product_view.php?type=1&id=151",
+      "img": "https://www.kobayashi.com.tw/upload/frame_product/611b5103ec6c7.jpg",
+      "plus__img": "https://img.icons8.com/ios/50/000000/plus-math.png",
+      "more": "更多介紹",
+      "id": "D213202",
+      "title": "伊藤 ITOH",
+      "model": "伊藤工匠-D213202",
+      "cost": 2480,
+      "code": 2480
+    },
+    {
+      "product": "https://www.kobayashi.com.tw/product_view.php?type=1&id=153",
+      "img": "https://www.kobayashi.com.tw/upload/frame_product/611b2f4d92972.jpg",
+      "plus__img": "https://img.icons8.com/ios/50/000000/plus-math.png",
+      "more": "更多介紹",
+      "id": "D213203",
+      "title": "伊藤 ITOH",
+      "model": "伊藤工匠-D213203",
+      "cost": 2480,
+      "code": 2480,
+      "color": "blue"
+    },
+    {
+      "product": "https://www.kobayashi.com.tw/product_view.php?type=1&id=153",
+      "img": "https://www.kobayashi.com.tw/upload/frame_product/611b2f4d92972.jpg",
+      "plus__img": "https://img.icons8.com/ios/50/000000/plus-math.png",
+      "more": "更多介紹",
+      "id": "D213204",
+      "title": "伊藤 ITOH",
+      "model": "伊藤工匠-D213204",
+      "cost": 2480,
+      "code": 2480,
+      "color": "black"
+    },
+    {
+      "product": "https://www.kobayashi.com.tw/product_view.php?type=1&id=154",
+      "img": "https://www.kobayashi.com.tw/upload/frame_product/611b50c764c70.jpg",
+      "plus__img": "https://img.icons8.com/ios/50/000000/plus-math.png",
+      "more": "更多介紹",
+      "id": "D213205",
+      "title": "伊藤 ITOH",
+      "model": "伊藤工匠-D213205",
+      "cost": 2480,
+      "code": 2480,
+      "color": "pink"
+    },
+    {
+      "product": "https://www.kobayashi.com.tw/product_view.php?type=1&id=155",
+      "img": "https://www.kobayashi.com.tw/upload/frame_product/611b519502746.jpg",
+      "plus__img": "https://img.icons8.com/ios/50/000000/plus-math.png",
+      "more": "更多介紹",
+      "id": "D213206",
+      "title": "伊藤 ITOH",
+      "model": "伊藤工匠-D213206",
+      "cost": 2480,
+      "code": 2480,
+      "color": "purple"
+    },
+    {
+      "product": "https://www.kobayashi.com.tw/product_view.php?type=1&id=156",
+      "img": "https://www.kobayashi.com.tw/upload/frame_product/611b41f7129e2.jpg",
+      "plus__img": "https://img.icons8.com/ios/50/000000/plus-math.png",
+      "more": "更多介紹",
+      "id": "D213207",
+      "title": "伊藤 ITOH",
+      "model": "伊藤工匠-D213207",
+      "cost": 2480,
+      "code": 2480,
+      "color": "red"
+    },
+    {
+      "product": "https://www.kobayashi.com.tw/product_view.php?type=1&id=157",
+      "img": "https://www.kobayashi.com.tw/upload/frame_product/611b42bf62609.jpg",
+      "plus__img": "https://img.icons8.com/ios/50/000000/plus-math.png",
+      "more": "更多介紹",
+      "id": "D213208",
+      "title": "伊藤 ITOH",
+      "model": "伊藤工匠-D213208",
+      "cost": 2480,
+      "code": 2480,
+      "color": "red"
+    },
+    {
+      "product": "https://www.kobayashi.com.tw/product_view.php?type=1&id=61",
+      "img": "https://www.kobayashi.com.tw/upload/frame_product/5e57374e596e0.jpg",
+      "plus__img": "https://img.icons8.com/ios/50/000000/plus-math.png",
+      "more": "更多介紹",
+      "id": "1014",
+      "title": "Armani Exchange",
+      "model": "Armani Exchange-1014",
+      "cost": 4450,
+      "code": 4450,
+      "show": true
+    },
+    {
+      "product": "https://www.kobayashi.com.tw/product_view.php?type=1&id=62",
+      "img": "https://www.kobayashi.com.tw/upload/frame_product/5e5737bd8b8b5.jpg",
+      "plus__img": "https://img.icons8.com/ios/50/000000/plus-math.png",
+      "more": "更多介紹",
+      "id": "1019",
+      "title": "Armani Exchange",
+      "model": "Armani Exchange-1019",
+      "cost": 4850,
+      "code": 4850
+    },
+    {
+      "product": "https://www.kobayashi.com.tw/product_view.php?type=1&id=63",
+      "img": "https://www.kobayashi.com.tw/upload/frame_product/5e57389412dca.jpg",
+      "plus__img": "https://img.icons8.com/ios/50/000000/plus-math.png",
+      "more": "更多介紹",
+      "id": "1037",
+      "title": "Armani Exchange",
+      "model": "潮流時尚-1037",
+      "cost": 4450,
+      "code": 4450
+    },
+    {
+      "product": "https://www.kobayashi.com.tw/product_view.php?type=1&id=127",
+      "img": "https://www.kobayashi.com.tw/upload/frame_product/5fffe43a19552.jpg",
+      "plus__img": "https://img.icons8.com/ios/50/000000/plus-math.png",
+      "more": "更多介紹",
+      "id": "V211604",
+      "title": "VENTO",
+      "model": "輕量塑鋼系列-V211604",
+      "cost": 888,
+      "code": 888,
+      "color": "purple"
+    },
+    {
+      "product": "https://www.kobayashi.com.tw/product_view.php?type=1&id=128",
+      "img": "https://www.kobayashi.com.tw/upload/frame_product/5fffe4a5b2d44.jpg",
+      "plus__img": "https://img.icons8.com/ios/50/000000/plus-math.png",
+      "more": "更多介紹",
+      "id": "V211605",
+      "title": "VENTO",
+      "model": "輕量塑鋼系列-V211605",
+      "cost": 888,
+      "code": 888,
+      "color": "purple"
+    },
+    {
+      "product": "https://www.kobayashi.com.tw/product_view.php?type=1&id=135",
+      "img": "https://www.kobayashi.com.tw/upload/frame_product/5fffeb7c5048c.jpg",
+      "plus__img": "https://img.icons8.com/ios/50/000000/plus-math.png",
+      "more": "更多介紹",
+      "id": "V211612",
+      "title": "VENTO",
+      "model": "輕量塑鋼系列-V211612",
+      "cost": 888,
+      "code": 888,
+      "color": "purple"
+    },
+    {
+      "product": "https://www.kobayashi.com.tw/product_view.php?type=1&id=72",
+      "img": "https://www.kobayashi.com.tw/upload/frame_product/606fe7bfe912d.jpg",
+      "plus__img": "https://img.icons8.com/ios/50/000000/plus-math.png",
+      "more": "更多介紹",
+      "id": "1046",
+      "title": "Armani Exchange",
+      "model": "型格都會-1046",
+      "cost": 3880,
+      "code": 3880,
+      "color": "yellow"
+    }
+  ]
+}
