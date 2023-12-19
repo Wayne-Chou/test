@@ -3,25 +3,13 @@
   <div class="box">
     <h1>會員資料{{ member.username }}</h1>
     <label for="user">姓名</label>
-    <input
-      v-model="member.username"
-      type="text"
-      id="user"
-      name="user"
-      required
-    />
+    <input v-model="member.username" type="text" id="user" name="user" required />
     <div v-if="errors.username" class="error-message">
       {{ errors.username }}
     </div>
     <br />
     <label for="address">地址</label>
-    <input
-      v-model="member.address"
-      type="text"
-      id="address"
-      name="address"
-      required
-    />
+    <input v-model="member.address" type="text" id="address" name="address" required />
     <div v-if="errors.address" class="error-message">
       {{ errors.address }}
     </div>
@@ -31,25 +19,13 @@
     <div v-if="errors.phone" class="error-message">{{ errors.phone }}</div>
     <br />
     <label for="password">密碼</label>
-    <input
-      v-model="member.password"
-      type="password"
-      id="password"
-      name="password"
-      required
-    />
+    <input v-model="member.password" type="password" id="password" name="password" required />
     <div v-if="errors.password" class="error-message">
       {{ errors.password }}
     </div>
     <br />
     <label for="confirmPassword">確認密碼</label>
-    <input
-      v-model="member.checkPassword"
-      type="password"
-      id="confirmPassword"
-      name="confirmPassword"
-      required
-    />
+    <input v-model="member.checkPassword" type="password" id="confirmPassword" name="confirmPassword" required />
     <div v-if="errors.checkPassword" class="error-message">
       {{ errors.checkPassword }}
     </div>
@@ -106,9 +82,9 @@ export default {
       };
 
       this.$axios
-        .patch("http://localhost:3000/member/" + id, change)
+        .patch("https://my-json-server.typicode.com/Wayne-Chou/shopping/member" + id, change)
         .then(() => {
-          this.$axios.get("http://localhost:3000/member/" + id).then((res) => {
+          this.$axios.get("https://my-json-server.typicode.com/Wayne-Chou/shopping/member" + id).then((res) => {
             this.member = res.data;
             this.$store.commit("setUserInfo", res.data);
             console.log("member", res);
@@ -123,6 +99,7 @@ export default {
 h1 {
   text-align: center;
 }
+
 .box {
   background: Blanchedalmond;
   padding: 30px;
@@ -130,11 +107,13 @@ h1 {
   width: 100%;
   margin: 30px auto;
 }
+
 .box input {
   height: 30px;
   width: 100%;
   margin-bottom: 20px;
 }
+
 .btn {
   width: 100%;
   height: 30px;

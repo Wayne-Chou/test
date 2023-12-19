@@ -25,11 +25,26 @@ export default {
     };
   },
 
+  // created() {
+  //   this.$axios.get("http://localhost:3000/products/").then((res) => {
+  //     this.products = res.data;
+  //   });
+  //   this.$axios.get("http://localhost:3000/wishList/").then((res) => {
+  //     this.wishList = res.data.filter(
+  //       (item) => item.userId === this.loginedUserInfo.id
+  //     );
+  //     this.wishList.forEach((item) => {
+  //       this.favorite.push(
+  //         this.products.find((e) => e.id === item.productNumber)
+  //       );
+  //     });
+  //   });
+  // },
   created() {
-    this.$axios.get("http://localhost:3000/products/").then((res) => {
+    this.$axios.get("https://my-json-server.typicode.com/Wayne-Chou/shopping/products").then((res) => {
       this.products = res.data;
     });
-    this.$axios.get("http://localhost:3000/wishList/").then((res) => {
+    this.$axios.get("https://my-json-server.typicode.com/Wayne-Chou/shopping/wishList").then((res) => {
       this.wishList = res.data.filter(
         (item) => item.userId === this.loginedUserInfo.id
       );
@@ -52,6 +67,7 @@ export default {
 .container {
   text-align: center;
 }
+
 .item-img {
   width: 100%;
   background: #000;

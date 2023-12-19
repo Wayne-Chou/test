@@ -5,7 +5,7 @@ const ghpages = require("gh-pages");
 
 const options = {
   branch: "gh-pages",
-  repo: "https://github.com/Wayne-Chou/shopping.git", // project github repo
+  repo: "https://github.com/Wayne-Chou/test.git", // project github repo
 };
 
 const callback = (err) => {

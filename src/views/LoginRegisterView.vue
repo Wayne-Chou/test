@@ -1,12 +1,6 @@
 <template>
   <div class="panel-group container">
-    <input
-      type="radio"
-      name="panel-radio"
-      id="radio1"
-      class="panel-control"
-      checked
-    />
+    <input type="radio" name="panel-radio" id="radio1" class="panel-control" checked />
     <input type="radio" name="panel-radio" id="radio2" class="panel-control" />
 
     <div class="tab-group">
@@ -17,22 +11,10 @@
       <div class="content content1">
         <div class="box">
           <label for="user_name">信箱</label>
-          <input
-            v-model="username"
-            type="email"
-            id="user_name"
-            name="username"
-            required
-          />
+          <input v-model="username" type="email" id="user_name" name="username" required />
           <br />
           <label for="password">密碼</label>
-          <input
-            v-model="password"
-            type="password"
-            id="password"
-            name="password"
-            required
-          />
+          <input v-model="password" type="password" id="password" name="password" required />
           <br />
           <button @click="login" class="login">登入</button>
         </div>
@@ -40,37 +22,19 @@
       <div class="content content2">
         <div class="box">
           <label for="username">信箱</label>
-          <input
-            v-model="username"
-            type="email"
-            id="username"
-            name="username"
-            required
-          />
+          <input v-model="username" type="email" id="username" name="username" required />
           <div v-if="errors.username" class="error-message">
             {{ errors.username }}
           </div>
           <br />
           <label for="r_password">密碼</label>
-          <input
-            v-model="password"
-            type="password"
-            id="r_password"
-            name="password"
-            required
-          />
+          <input v-model="password" type="password" id="r_password" name="password" required />
           <div v-if="errors.password" class="error-message">
             {{ errors.password }}
           </div>
           <br />
           <label for="check_password">確認密碼</label>
-          <input
-            v-model="check_password"
-            type="password"
-            id="check_password"
-            name="password"
-            required
-          />
+          <input v-model="check_password" type="password" id="check_password" name="password" required />
           <div v-if="errors.check_password" class="error-message">
             {{ errors.check_password }}
           </div>
@@ -82,13 +46,7 @@
           </div>
           <br />
           <label for="address">地址</label>
-          <input
-            v-model="address"
-            type="text"
-            id="address"
-            name="address"
-            required
-          />
+          <input v-model="address" type="text" id="address" name="address" required />
           <div v-if="errors.address" class="error-message">
             {{ errors.address }}
           </div>
@@ -140,9 +98,16 @@ export default {
     };
   },
 
+  // created() {
+  //   // 使用get來獲取會員資料
+  //   this.$axios.get("http://localhost:3000/member/").then((res) => {
+  //     this.member = res.data;
+  //     // console.log(res);
+  //   });
+  // },
   created() {
     // 使用get來獲取會員資料
-    this.$axios.get("http://localhost:3000/member/").then((res) => {
+    this.$axios.get("https://my-json-server.typicode.com/Wayne-Chou/shopping/member").then((res) => {
       this.member = res.data;
       // console.log(res);
     });
@@ -182,7 +147,7 @@ export default {
           address: this.address,
         };
         // 將資料透過payLoad傳入store
-        this.$axios.post("http://localhost:3000/member/", payLoad).then(() => {
+        this.$axios.post("https://my-json-server.typicode.com/Wayne-Chou/shopping/member", payLoad).then(() => {
           this.$store.commit("setUserInfo", payLoad);
           // console.log("name", payLoad);
         });
@@ -240,9 +205,11 @@ export default {
   padding: 0;
   box-sizing: border-box;
 }
+
 .panel-control {
   display: none;
 }
+
 .panel-group {
   max-width: 450px;
   width: 100%;
@@ -254,6 +221,7 @@ export default {
   justify-content: center;
   gap: 15px;
 }
+
 .tab-group label {
   display: inline-block;
   width: 100px;
@@ -265,22 +233,26 @@ export default {
   font-size: 22px;
   text-align: center;
 }
+
 .content-group {
   width: 100%;
 }
+
 .content {
   display: none;
 }
-#radio1:checked ~ .tab-group [for="radio1"],
-#radio2:checked ~ .tab-group [for="radio2"] {
+
+#radio1:checked~.tab-group [for="radio1"],
+#radio2:checked~.tab-group [for="radio2"] {
   background-color: lightcoral;
   color: #fff;
 }
 
-#radio1:checked ~ .content-group .content1,
-#radio2:checked ~ .content-group .content2 {
+#radio1:checked~.content-group .content1,
+#radio2:checked~.content-group .content2 {
   display: block;
 }
+
 .box {
   padding: 30px;
   display: flex;
@@ -288,9 +260,11 @@ export default {
   background: antiquewhite;
   border-radius: 25px;
 }
+
 .box input {
   height: 30px;
 }
+
 .login,
 .register {
   outline: none;
@@ -311,6 +285,7 @@ export default {
   right: 0;
   bottom: 0;
 }
+
 .modal {
   margin: 2.5em auto;
   max-width: 500px;

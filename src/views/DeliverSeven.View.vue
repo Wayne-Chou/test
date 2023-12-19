@@ -9,13 +9,7 @@
     <input v-model="phone" type="text" name="cellphone" id="phone" />
     <div v-if="errors.phone" class="error-message">{{ errors.phone }}</div>
     <br />
-    <select
-      @change="changeArea"
-      id="area"
-      name="area"
-      required
-      v-model="selectedArea"
-    >
+    <select @change="changeArea" id="area" name="area" required v-model="selectedArea">
       <option value="">請選擇地區</option>
       <option v-for="area in arealist" :key="area.name" :value="area">
         {{ area.name }}
@@ -25,13 +19,7 @@
       {{ errors.selectedArea }}
     </div>
 
-    <select
-      id="shop"
-      name="shop"
-      required
-      v-model="SevenShop"
-      :disabled="!selectedArea"
-    >
+    <select id="shop" name="shop" required v-model="SevenShop" :disabled="!selectedArea">
       <option value="">請選擇門市</option>
       <option v-for="shop in shoplist" :key="shop.townname" :value="shop">
         {{ shop.townname }}
@@ -145,7 +133,7 @@ export default {
           status: true,
         };
         this.$axios
-          .post("http://localhost:3000/sevenDatil/", MemberProfile)
+          .post("https://my-json-server.typicode.com/Wayne-Chou/shopping/sevenDatil", MemberProfile)
           .then(() => {
             this.$router.push({ name: "OrderView" });
           });
@@ -158,6 +146,7 @@ export default {
 .container {
   text-align: center;
 }
+
 .error-message {
   color: red;
   font-size: 14px;

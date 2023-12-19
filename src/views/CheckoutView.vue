@@ -16,9 +16,7 @@
         <div>{{ item.number }}</div>
         <button @click="remover(item)">刪除商品</button>
         <div>购物车总金额: {{ carTotal }}</div>
-        <RouterLink to="/Payment"
-          ><button @click="getOrders">結帳</button></RouterLink
-        >
+        <RouterLink to="/Payment"><button @click="getOrders">結帳</button></RouterLink>
       </div>
     </div>
   </div>
@@ -55,12 +53,12 @@ export default {
         userId: this.loginedUserInfo.id,
       };
 
-      this.$axios.post("http://localhost:3000/orders/", Myorders).then(() => {
+      this.$axios.post("https://my-json-server.typicode.com/Wayne-Chou/shopping/orders", Myorders).then(() => {
         this.getOrder();
       });
     },
     getOrder() {
-      this.$axios.get("http://localhost:3000/orders/").then((res) => {
+      this.$axios.get("https://my-json-server.typicode.com/Wayne-Chou/shopping/orders").then((res) => {
         this.orders = res.data.filter(
           (item) => item.userId === this.loginedUserInfo.id
         );
@@ -83,9 +81,11 @@ export default {
   text-align: center;
   font-size: 30px;
 }
+
 .content {
   text-align: center;
 }
+
 .item-img {
   width: 100%;
   background: #000;

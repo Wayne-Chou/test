@@ -15,11 +15,7 @@
             <div @click="addToCart(productInfo)" class="shpping_icon">
               <i class="fa-solid fa-cart-shopping"></i>
             </div>
-            <div
-              class="love_icon"
-              @click="addFavorite(productInfo)"
-              :class="{ active: Isfav }"
-            >
+            <div class="love_icon" @click="addFavorite(productInfo)" :class="{ active: Isfav }">
               <i class="fa-regular fa-heart"></i>
               <i class="fa-solid fa-heart"></i>
             </div>
@@ -59,15 +55,25 @@ export default {
   },
   methods: {
     // 在這裡使用gat的方式取得商品資訊
+    // productInfoGetInfo() {
+    //   this.$axios
+    //     .get("http://localhost:3000/products/" + this.productId)
+    //     .then((res) => {
+    //       this.productInfo = res.data;
+    //       // console.log(res.data);
+    //       // console.log(this.productInfo);
+    //     });
+    // },
     productInfoGetInfo() {
       this.$axios
-        .get("http://localhost:3000/products/" + this.productId)
+        .get("https://my-json-server.typicode.com/Wayne-Chou/shopping/products" + this.productId)
         .then((res) => {
           this.productInfo = res.data;
           // console.log(res.data);
           // console.log(this.productInfo);
         });
     },
+
     addToCart(productInfo) {
       // 運用find來比對商品存不存在
       const NotexistItem = this.carItems.find(
@@ -79,14 +85,52 @@ export default {
       }
     },
 
+    // getWishList() {
+    //   this.$axios.get("http://localhost:3000/wishList/").then((res) => {
+    //     this.wishList = res.data.filter(
+    //       (item) => item.userId === this.loginedUserInfo.id
+    //     );
+    //     console.log("wishList", this.wishList);
+    //   });
+    // },
+
+
     getWishList() {
-      this.$axios.get("http://localhost:3000/wishList/").then((res) => {
+      this.$axios.get("https://my-json-server.typicode.com/Wayne-Chou/shopping/wishList").then((res) => {
         this.wishList = res.data.filter(
           (item) => item.userId === this.loginedUserInfo.id
         );
         console.log("wishList", this.wishList);
       });
     },
+
+
+    // addFavorite(productInfo) {
+    //   this.Isfav = !this.Isfav;
+    //   if (this.loginedUserInfo.id) {
+    //     const existItem = this.wishList.find(
+    //       (item) => item.productNumber === productInfo.id
+    //     );
+
+    //     if (existItem) {
+    //       this.$axios
+    //         .delete("http://localhost:3000/wishList/" + existItem.id)
+    //         .then(() => {
+    //           this.getWishList();
+    //         });
+    //     } else {
+    //       let Myfavorite = {
+    //         productNumber: productInfo.id,
+    //         userId: this.loginedUserInfo.id,
+    //       };
+    //       this.$axios
+    //         .post("http://localhost:3000/wishList/", Myfavorite)
+    //         .then(() => {
+    //           this.getWishList();
+    //         });
+    //     }
+    //   }
+    // },
 
     addFavorite(productInfo) {
       this.Isfav = !this.Isfav;
@@ -97,7 +141,7 @@ export default {
 
         if (existItem) {
           this.$axios
-            .delete("http://localhost:3000/wishList/" + existItem.id)
+            .delete("https://my-json-server.typicode.com/Wayne-Chou/shopping/wishList" + existItem.id)
             .then(() => {
               this.getWishList();
             });
@@ -107,7 +151,7 @@ export default {
             userId: this.loginedUserInfo.id,
           };
           this.$axios
-            .post("http://localhost:3000/wishList/", Myfavorite)
+            .post("https://my-json-server.typicode.com/Wayne-Chou/shopping/wishList", Myfavorite)
             .then(() => {
               this.getWishList();
             });
@@ -123,13 +167,16 @@ export default {
   margin: 0;
   padding: 0;
 }
+
 .product_content {
   padding: 40px;
   text-align: center;
 }
+
 .product_item {
   position: relative;
 }
+
 .product_img {
   width: 100%;
   background: #000;
@@ -137,19 +184,23 @@ export default {
   align-items: center;
   justify-content: center;
 }
+
 .product_img img {
   width: 250px;
   height: 300px;
   padding: 10px;
 }
+
 .product_total {
   margin-bottom: 20px;
   font-size: 18px;
 }
+
 .product_total span {
   font-weight: bold;
   color: #09ceb7;
 }
+
 .product_number {
   position: absolute;
   background: #09ceb7;
@@ -159,28 +210,34 @@ export default {
   top: 0;
   right: 0;
 }
+
 .product_title {
   font-size: 24px;
   margin-bottom: 20px;
 }
+
 .product_cost {
   font-size: 28px;
   color: #09ceb7;
   margin: 16px 0;
 }
+
 .product_price {
   color: #e5e5e5;
   text-decoration: line-through;
 }
+
 .shop_love {
   display: flex;
   justify-content: space-evenly;
 }
+
 .shop_love,
 .love_icon {
   font-size: 40px;
   cursor: pointer;
 }
+
 /* 愛心樣式切換 */
 .fa-solid.fa-heart {
   display: none;

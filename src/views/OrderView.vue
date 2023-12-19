@@ -1,5 +1,5 @@
 
- <template>
+<template>
   <OrderEle />
   <div class="container">
     <div v-if="delivery.length === 0">您沒有任何訂單</div>
@@ -21,7 +21,7 @@
         <div class="item-phone">{{ item.phone }}</div>
         <div class="item-selectedArea">{{ item.selectedAreaName }}</div>
         <div class="item-SevenShop">{{ item.SevenShopName }}</div>
-        <button :disabled="item.status === true" @click="cancel(item.id)">
+        <button :disabled="item.status === false" @click="cancel(item.id)">
           取消訂單
         </button>
       </div>
@@ -49,11 +49,30 @@ export default {
       return this.$store.getters.loginedUserInfo;
     },
   },
+  // created() {
+  //   this.$axios.get("http://localhost:3000/products/").then((res) => {
+  //     this.products = res.data;
+  //   });
+  //   this.$axios.get("http://localhost:3000/orders/").then((res) => {
+  //     this.orders = res.data.filter(
+  //       (item) => item.userId === this.loginedUserInfo.id
+  //     );
+  //     this.orders.forEach((item) => {
+  //       item.productNumber.forEach((productItem) => {
+  //         this.delivery.push(this.products.find((e) => e.id === productItem));
+  //       });
+  //     });
+  //   });
+  //   this.$axios.get("http://localhost:3000/sevenDatil/").then((res) => {
+  //     this.member = res.data;
+  //     console.log("member", res);
+  //   });
+  // },
   created() {
-    this.$axios.get("http://localhost:3000/products/").then((res) => {
+    this.$axios.get("https://my-json-server.typicode.com/Wayne-Chou/shopping/products").then((res) => {
       this.products = res.data;
     });
-    this.$axios.get("http://localhost:3000/orders/").then((res) => {
+    this.$axios.get("https://my-json-server.typicode.com/Wayne-Chou/shopping/orders").then((res) => {
       this.orders = res.data.filter(
         (item) => item.userId === this.loginedUserInfo.id
       );
@@ -63,20 +82,35 @@ export default {
         });
       });
     });
-    this.$axios.get("http://localhost:3000/sevenDatil/").then((res) => {
+    this.$axios.get("https://my-json-server.typicode.com/Wayne-Chou/shopping/sevenDatil").then((res) => {
       this.member = res.data;
       console.log("member", res);
     });
   },
+  // methods: {
+  //   cancel(id) {
+  //     let cancel = {
+  //       status: false,
+  //     };
+  //     this.$axios
+  //       .patch("http://localhost:3000/sevenDatil/" + id, cancel)
+  //       .then(() => {
+  //         this.$axios.get("http://localhost:3000/sevenDatil/").then((res) => {
+  //           this.member = res.data;
+  //           console.log("member", res);
+  //         });
+  //       });
+  //   },
+  // },
   methods: {
     cancel(id) {
       let cancel = {
         status: false,
       };
       this.$axios
-        .patch("http://localhost:3000/sevenDatil/" + id, cancel)
+        .patch("https://my-json-server.typicode.com/Wayne-Chou/shopping/sevenDatil" + id, cancel)
         .then(() => {
-          this.$axios.get("http://localhost:3000/sevenDatil/").then((res) => {
+          this.$axios.get("https://my-json-server.typicode.com/Wayne-Chou/shopping/sevenDatil").then((res) => {
             this.member = res.data;
             console.log("member", res);
           });
@@ -90,6 +124,7 @@ export default {
 .container {
   text-align: center;
 }
+
 .item-img {
   width: 300px;
 
@@ -104,6 +139,7 @@ export default {
   height: 300px;
   padding: 10px;
 }
+
 .disabled {
   background: #ccc;
 }

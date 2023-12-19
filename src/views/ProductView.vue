@@ -20,15 +20,10 @@
       <option value="highToLow">價格高到低</option>
     </select>
     <p class="product_total">
-      總共有<span id="listNum">{{ ProductsColor.length }}</span
-      >個商品
+      總共有<span id="listNum">{{ ProductsColor.length }}</span>個商品
     </p>
     <div class="productsList">
-      <div
-        v-for="(product, index) in ProductsColor"
-        :key="index"
-        class="product_item"
-      >
+      <div v-for="(product, index) in ProductsColor" :key="index" class="product_item">
         <span class="product_number">{{ product.id }}</span>
         <div class="product_img" @click="ProductsPush(product.id)">
           <img :src="product.img" alt="" />
@@ -54,9 +49,15 @@ export default {
     };
   },
 
+  // created() {
+  //   // 透過axios.get取得資料
+  //   this.$axios.get("http://localhost:3000/products/").then((res) => {
+  //     this.products = res.data;
+  //   });
+  // },
   created() {
     // 透過axios.get取得資料
-    this.$axios.get("http://localhost:3000/products/").then((res) => {
+    this.$axios.get("https://my-json-server.typicode.com/Wayne-Chou/shopping/products").then((res) => {
       this.products = res.data;
     });
   },
@@ -125,6 +126,7 @@ export default {
   margin: 80px auto;
   text-align: center;
 }
+
 .productsList {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -148,19 +150,23 @@ export default {
   align-items: center;
   justify-content: center;
 }
+
 .product_img img {
   width: 250px;
   height: 300px;
   padding: 10px;
 }
+
 .product_total {
   margin-bottom: 20px;
   font-size: 18px;
 }
+
 .product_total span {
   font-weight: bold;
   color: #09ceb7;
 }
+
 .product_number {
   position: absolute;
   background: #09ceb7;
@@ -170,15 +176,18 @@ export default {
   top: 0;
   right: 0;
 }
+
 .product_title {
   font-size: 24px;
   margin-bottom: 20px;
 }
+
 .product_cost {
   font-size: 28px;
   color: #09ceb7;
   margin: 16px 0;
 }
+
 .product_price {
   color: #e5e5e5;
   text-decoration: line-through;
